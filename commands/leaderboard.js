@@ -19,7 +19,11 @@ module.exports.run = async (bot, message, args) => {
         const leaderboard = new Discord.MessageEmbed().setTitle('__Global Leaderboard__').setColor(`0x${botconfig.setup.commandColour}`).setThumbnail('https://media.discordapp.net/attachments/818217884886499338/824710893211877376/LevelIcon_025.png');
         console.log(userData.length);
         let score, scoreLevel, scoreScore;
-        for (let i = 0; i < 25; i++) {
+        let loop = 25;
+        if (userData.length < 25) {
+            loop = userData.length;
+        }
+        for (let i = 0; i < loop; i++) {
             score = userData[i][2];
             scoreLevel = score.slice(1, 3);
             scoreScore = score.slice(4, score.length);

@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const botconfig = require("../botsettings.json");
 const request = require('request');
 module.exports.run = async (bot, message, args) => {
+    if (botconfig.setup.server != 'www.robtopgames.com/Boomlings')
+        return message.channel.send("This Command is only usable on the official Boomlings Servers");
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -18,6 +20,7 @@ module.exports.run = async (bot, message, args) => {
             secret: "Wmfd2893gb7"
         }
     }, function callback(err, httpResponse, body) {
+        console.log(httpResponse, body);
         if (body == '-1')
             return message.channel.send("Robert said no");
         message.channel.send(`RefID Generated: \`${body}\``);
