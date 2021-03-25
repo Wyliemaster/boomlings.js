@@ -9,4 +9,6 @@ A discord bot that interacts with the boomlings server
 
 ### Setup
 
-Please Refer to the [Setup Guide](https://github.com/Wyliemaster/boomlings.js/blob/main/setup.md)
+Please Refer to the [Setup Guide](https://github.com/Wyliemaster/boomlings.js/blob/main/setup.md) to set up the config
+
+after setting the config up, you host the bot somewhere
