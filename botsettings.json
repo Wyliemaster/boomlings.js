@@ -1,0 +1,9 @@
+{
+    "setup": {
+        "token": "",
+        "server": "www.robtopgames.com/Boomlings",
+        "prefix": "b?",
+        "commandColour": "FF0000",
+        "customStatus": "Being coded"
+    }
+}
