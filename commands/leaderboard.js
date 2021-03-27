@@ -8,6 +8,8 @@ module.exports.run = async (bot, message, args) => {
             secret: "Wmfd2893gb7"
         }
     }, function callback(err, httpResponse, body) {
+        if (httpResponse['statusCode'] != 200)
+            return message.channel.send(`Something went wrong.\nStatus Code: ${httpResponse['statusCode']} ${httpResponse['statusMessage']}`);
         let userData = [];
         let users = body.split(" ");
         for (let i = 0; i < users.length; i++) {
@@ -33,9 +35,9 @@ module.exports.run = async (bot, message, args) => {
     });
 };
 module.exports.config = {
-    name: "leaderboard",
+    name: "lb",
     description: "checks if server is online",
     usage: `${botconfig.setup.prefix}leaderboard`,
     accessableby: "Members",
-    aliases: ['lb']
+    aliases: []
 };

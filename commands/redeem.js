@@ -14,6 +14,8 @@ module.exports.run = async (bot, message, args) => {
             refID: args[0]
         }
     }, function callback(err, httpResponse, body) {
+        if (httpResponse['statusCode'] != 200)
+            return message.channel.send(`Something went wrong.\nStatus Code: ${httpResponse['statusCode']} ${httpResponse['statusMessage']}`);
         if (body == 1)
             return message.channel.send(`\`${args[0]}\` has just been reward 500 coins.`);
         if (body == 'kE01')

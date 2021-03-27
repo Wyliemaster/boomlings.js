@@ -12,7 +12,9 @@ module.exports.run = async (bot, message, args) => {
             secret: "Wmfd2893gb7"
         }
     }, function callback(err, httpResponse, body) {
-        console.log(httpResponse, body);
+        console.log(httpResponse);
+        if (httpResponse['statusCode'] != 200)
+            return message.channel.send(`Something went wrong.\nStatus Code: ${httpResponse['statusCode']} ${httpResponse['statusMessage']}`);
         if (body == '-1')
             return message.channel.send("Robert said no");
         message.channel.send(`RefID Generated: \`${body}\``);
@@ -23,5 +25,5 @@ module.exports.config = {
     description: "Generates a new RefID which you can use in-game",
     usage: `${botconfig.setup.prefix}makeCode`,
     accessableby: "Members",
-    aliases: ['refID', 'helpidonthaveanyfriends', 'makecode']
+    aliases: ['refID', 'helpidonthaveanyfriends', 'makecode', 'imlonely', 'helpihavenofriends']
 };
