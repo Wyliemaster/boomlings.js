@@ -33,9 +33,9 @@ module.exports.run = async (bot, message, args) => {
     });
 };
 module.exports.config = {
-    name: "lb",
+    name: "leaderboard",
     description: "checks if server is online",
     usage: `${botconfig.setup.prefix}leaderboard`,
     accessableby: "Members",
-    aliases: []
+    aliases: ['lb']
 };
